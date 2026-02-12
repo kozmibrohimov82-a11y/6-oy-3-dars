@@ -19,6 +19,7 @@ class Car(models.Model):
     video=models.FileField(upload_to='video/',blank=True,null=True)
     marka=models.CharField(max_length=150)
     year=models.DecimalField(max_digits=4,decimal_places=0)
+    brand=models.ForeignKey(Brand,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
